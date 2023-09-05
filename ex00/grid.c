@@ -6,7 +6,7 @@
 /*   By: tsaldias <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 17:54:28 by tsaldias          #+#    #+#             */
-/*   Updated: 2023/09/03 23:34:24 by truello          ###   ########.fr       */
+/*   Updated: 2023/09/05 10:56:09 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ int	**ft_get_grid(char *arg, int *format)
 			i++;
 		}
 		ft_put_sides_in_grid(grid, sides, format);
+		free(sides);
 		return (grid);
 	}
 	return (0);

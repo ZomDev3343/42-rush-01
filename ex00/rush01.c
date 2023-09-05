@@ -6,7 +6,7 @@
 /*   By: truello <thomasdelan2@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 22:33:38 by truello           #+#    #+#             */
-/*   Updated: 2023/09/03 23:28:11 by truello          ###   ########.fr       */
+/*   Updated: 2023/09/05 10:57:14 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,8 @@ int	main(int argc, char **argv)
 	int	**grid;
 	int	format;
 	int	i;
-	int	j;
 
-	i = 0;
-	j = 0;
+	i = -1;
 	if (argc == 2)
 	{
 		grid = ft_get_grid(argv[1], &format);
@@ -68,6 +66,8 @@ int	main(int argc, char **argv)
 				print_grid(grid, format - 2);
 			else
 				ft_putstr("Error\n");
+			while (++i < format)
+				free(grid[i]);
 			free(grid);
 		}
 		else
